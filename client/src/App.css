@@ -1,0 +1,50 @@
+
+/* background : #000039 none no-repeat scroll 0 0; */
+
+.base{
+  display: flex;
+   align-items:center;
+   justify-content: center;
+       
+   color: white;
+   font-family: Arial;
+   
+  
+}
+
+.subbase{
+   
+   padding: 10px 10px 10px 10px;
+   border-color: rgb(3, 3, 151);
+   border-style:groove;
+   background-color:rgb(238, 233, 233);
+}
+
+label{
+   color: black;
+}
+
+
+form{
+  
+   display: flex;
+   flex-direction: column;
+}
+
+.InputText{
+  
+   display: flex;
+   flex-direction: column;
+}
+
+button{
+   width: 100%;
+   height: 50px;
+   border: none;
+   background-color: rgb(82, 82, 238);
+   color: white;
+   font-weight: bold;
+   font-size: 18px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
