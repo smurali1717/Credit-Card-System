@@ -31,6 +31,11 @@ function Form({updateStatus}) {
           });
           const data = await response.json();
           console.log(data);
+          if(response.status===201){
+            alert(data.message)
+          }else{
+            alert(data.message)
+          }
           updateStatus(Date().toLocaleString());
           
         } catch (error) {
@@ -42,9 +47,9 @@ function Form({updateStatus}) {
      
         <div className="divBG">
             <form onSubmit={handleSubmit}>        
-                <InputText type="text"   propLabel="Name" pHolder="Full Name" name="name" error="Please enter the valid Name!" validationPattern="^([a-zA-Z]{0,}\s[a-zA-Z]{0,}'?-?[a-zA-Z]{1,}\s?([a-zA-Z]{0,})?)"  />
-                <InputText type="number" propLabel="Card Number" pHolder="Card Number" name="cardNumber" error="Please enter the valid Card Number!" validationPattern={validationPattern[1]}/>
-                <InputText type="number" propLabel="Limit" pHolder="Limit" name="limit" error="Please enter the valid limit!!" validationPattern={validationPattern[2]}/>
+                <InputText type="text"   propLabel="Full Name" pHolder="Full Name" name="name" error="Please enter the valid First and Last Name!" minLength="5" maxLength="30" validationPattern="^([a-zA-Z]{0,}\s[a-zA-Z]{0,}'?-?[a-zA-Z]{1,}\s?([a-zA-Z]{0,})?)"  />
+                <InputText type="text" propLabel="Card Number" pHolder="Card Number" name="cardNumber" error="Please enter the valid Card Number!"  minLength="10" maxLength="10" validationPattern={"^[0-9]*$"}/>
+                <InputText type="number" propLabel="Limit" pHolder="Limit" name="limit" error="Please enter the valid limit!!" minLength="1" maxLength="5" validationPattern={"^[0-9]*$"}/>
                 <button type="submit">Add</button>
             </form>
         </div>     
