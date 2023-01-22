@@ -1,4 +1,5 @@
 const express = require('express');
+const helmet = require("helmet");
 const { check, body, validationResult } = require('express-validator');
 
 const cors = require('cors');
@@ -8,6 +9,7 @@ const PORT = 3000;
 
 app.use(cors());
 app.use(express.json());
+app.use(helmet());
 
 app.get('/getAllCards', (req, res) => {
     try{    
